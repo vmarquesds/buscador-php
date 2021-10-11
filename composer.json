@@ -1,0 +1,38 @@
+{
+    "name": "vmarquesds/buscador-cursos",
+    "description": "Pojeto de busca os cursos no site da Alura",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Vitor",
+            "email": "vmarquesds@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.3",
+        "symfony/dom-crawler": "^5.3",
+        "symfony/css-selector": "^5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vitu\\BuscadorDeCursos\\": "src/"
+        }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.6",
+        "phan/phan": "^5.2"
+    },
+    "scripts": {
+        "test": "phpunit tests\\TestBuscardorDeCursos.php",
+        "cs": "phpcs --standard=PSR12 src/",
+        "phan": "phan --allow-polyfill-parser",
+        "check": [
+            "@cs",
+            "@phan"
+        ],
+        "pre-update-cmd": "@test"
+    },
+    "scripts-descriptions": {
+        "check": "Roda as verificaões do código. PHAN, PHPCS e PHPUNIT"
+    }
+}
